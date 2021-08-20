@@ -3,10 +3,7 @@ package com.company;
 public class Tile {
     private final int tileCode = 1;
     public String toString() {
-        String box = "  ------ \n" +
-                     " |      | \n" +
-                     " |      | \n" +
-                     "  ------ \n";
+        String box = "[ ]";
         return box;
     }
 

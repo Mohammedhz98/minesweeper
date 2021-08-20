@@ -1,12 +1,12 @@
 package com.company;
 
-public class NumberTile {
+public class NumberTile extends Tile {
 
     public String toString() {
-        String hiddenBox = "  ------ \n" +
+        String numberBox = "  ------ \n" +
                            " |   1   | \n" +
                            " |   1   | \n" +
                            "  ------ \n";
-        return hiddenBox;
+        return numberBox;
     }
 }

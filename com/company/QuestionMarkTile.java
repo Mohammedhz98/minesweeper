@@ -1,13 +1,10 @@
 package com.company;
 
-public class QuestionMarkTile {
+public class QuestionMarkTile extends Tile {
     private final int tileCode = 4;
 
     public String toString() {
-        String QuestionMarkBox = "  ------ \n" +
-                                 " |      | \n" +
-                                 " |   !  | \n" +
-                                 "  ------ \n";
+        String QuestionMarkBox = "[?]";
 
         return QuestionMarkBox;
     }

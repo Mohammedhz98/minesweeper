@@ -1,13 +1,10 @@
 package com.company;
 
-public class HiddenTile {
+public class HiddenTile extends Tile {
     private final int tileCode = 5;
 
     public String toString() {
-        String hiddenBox = "  ------ \n" +
-                           " | / / / | \n" +
-                           " |/ / / /| \n" +
-                           "  ------ \n";
+        String hiddenBox = "[\u25A0]";
         return hiddenBox;
     }
 }
