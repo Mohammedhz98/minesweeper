@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 
 public class MSGrid {
-    private static Tile[][] hiddenBoard;
+    public static Tile[][] hiddenBoard;
     private static Tile[][] uncoveredBoard;
     private static int totalMines;
     private static int x;

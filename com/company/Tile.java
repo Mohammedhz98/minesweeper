@@ -2,6 +2,9 @@ package com.company;
 
 public class Tile {
     private final int tileCode = 1;
+    public String name = "Empty";
+
+
     public String toString() {
         String box = "[ ]";
         return box;
@@ -11,5 +14,9 @@ public class Tile {
         Tile tileOne = new Tile();
         Tile tileTwo = new Tile();
         System.out.println(tileOne);
+    }
+
+    public int getTileCode() {
+        return tileCode;
     }
 }
