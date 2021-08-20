@@ -16,8 +16,12 @@ public class Main {
         if(answer.equals("yes")) {
             gameRunning =true;
             System.out.println("Wonderful let us play Minesweeper: ");
-            setHiddenBoard(createHiddenGrid(10,10));
-            setUncoveredBoard(createUncoveredGrid(10,10));
+            System.out.println("How big do you want the Minesweeper grid to be? ");
+            System.out.println("Enter grid size: ");
+            Scanner sizeResponse = new Scanner(System.in);
+            int size = sizeResponse.nextInt();
+            setHiddenBoard(createHiddenGrid(size, size));
+            setUncoveredBoard(createUncoveredGrid(size, size));
             System.out.println(displayHiddenGrid());
         }
         else if(answer.equals("no")) {
