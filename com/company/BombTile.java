@@ -9,8 +9,7 @@ public class BombTile extends Tile {
     }
 
     public String toString() {
-        String bombBox = "[\uD83D\uDCA5]";
-
+        String bombBox = "[\uD83D\uDCA3]";
         return bombBox;
     }
 
