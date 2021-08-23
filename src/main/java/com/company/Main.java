@@ -1,7 +1,6 @@
 package com.company;
 
 import java.util.Scanner;
-import java.util.logging.Logger;
 
 import static com.company.MSGrid.*;
 
@@ -9,6 +8,8 @@ public class Main {
 
     public static void main(String[] args) {
         boolean gameRunning = false;
+        String inputX = "Choose an X - Coordinate: ";
+        String inputY = "Choose a Y - Coordinate: ";
         System.out.println("Hello there my name is Miynes Weeper you must be bored\n" +
                 "from the looks of it. Would you like to play a game of " +
                 "Minesweeper? ");
@@ -45,10 +46,10 @@ public class Main {
             int choice = selection.nextInt();
             switch (choice) {
                 case 1:
-                    System.out.println("Choose an X - Coordinate: ");
+                    System.out.println(inputX);
                     Scanner xChoice = new Scanner(System.in);
                     int x = xChoice.nextInt();
-                    System.out.println("Choose a Y - Coordinate: ");
+                    System.out.println(inputY);
                     Scanner yChoice = new Scanner(System.in);
                     int y = yChoice.nextInt();
                     if(getUncoveredBoard()[y][x].getTileCode() == 2) {
@@ -66,10 +67,10 @@ public class Main {
                 case 2:
                     boolean flagPicked = false;
                     while (!flagPicked) {
-                        System.out.println("Choose an X - Coordinate: ");
+                        System.out.println(inputX);
                         xChoice = new Scanner(System.in);
                         x = xChoice.nextInt();
-                        System.out.println("Choose a Y - Coordinate: ");
+                        System.out.println(inputY);
                         yChoice = new Scanner(System.in);
                         y = yChoice.nextInt();
                         Tile flag = new FlagTile();
@@ -86,10 +87,10 @@ public class Main {
                 case 3:
                     boolean unflaggedPick = false;
                     while (!unflaggedPick) {
-                        System.out.println("Choose an X - Coordinate: ");
+                        System.out.println(inputX);
                         xChoice = new Scanner(System.in);
                         x = xChoice.nextInt();
-                        System.out.println("Choose a Y - Coordinate: ");
+                        System.out.println(inputY);
                         yChoice = new Scanner(System.in);
                         y = yChoice.nextInt();
                         Tile hidden = new HiddenTile();
