@@ -29,9 +29,4 @@
         <sonar.organization>mohammedhz98</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
-
-<<<<<<< HEAD
 </project>
-=======
-</project>
->>>>>>> 960c7211aebdf08b3a5d87d9a030c11b64afffdc
