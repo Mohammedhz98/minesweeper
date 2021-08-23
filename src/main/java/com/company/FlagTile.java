@@ -8,8 +8,8 @@ public class FlagTile extends Tile {
         return tileCode;
     }
 
+    @Override
     public String toString() {
-        String flagBox = "[\uD83D\uDEA9]";
-        return flagBox;
+        return "[\uD83D\uDEA9]";
     }
 }

@@ -8,8 +8,8 @@ public class HiddenTile extends Tile {
         return tileCode;
     }
 
+    @Override
     public String toString() {
-        String hiddenBox = "[\u25A0]";
-        return hiddenBox;
+        return "[\u25A0]";
     }
 }

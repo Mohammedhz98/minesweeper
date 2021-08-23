@@ -1,7 +1,7 @@
 package com.company;
 
 public class NumberTile extends Tile {
-    private final int tileCode = 6;
+    private static final int tileCode = 6;
     private int mineNumber;
 
     @Override
@@ -22,8 +22,8 @@ public class NumberTile extends Tile {
         this.mineNumber = mineNumber;
     }
 
+    @Override
     public String toString() {
-        String numberBox = "[" + getMineNumber() + "]";
-        return numberBox;
+        return "[" + getMineNumber() + "]";
     }
 }

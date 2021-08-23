@@ -2,11 +2,11 @@ import com.company.Tile;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
-public class TileTests {
+class TileTests {
 
     @Test
-    public void getTileNumber() {
+    void getTileNumber() {
         Tile empty = new Tile();
-        Assertions.assertEquals(empty.getTileCode(),1,"test 1");
+        Assertions.assertEquals(1,empty.getTileCode(),"test 1");
     }
 }

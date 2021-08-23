@@ -1,22 +1,15 @@
 package com.company;
 
 public class Tile {
-    private final int tileCode = 1;
-    public String name = "Empty";
+    private static final int tileCode = 1;
+    private static final String name = "Empty";
 
 
     public String toString() {
-        String box = "[ ]";
-        return box;
+        return "[ ]";
     }
 
     public int getTileCode() {
         return tileCode;
-    }
-
-    public static void main(String[] args) {
-        Tile tileOne = new Tile();
-        Tile tileTwo = new Tile();
-        System.out.println(tileOne);
     }
 }

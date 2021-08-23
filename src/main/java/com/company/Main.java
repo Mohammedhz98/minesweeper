@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.Scanner;
+import java.util.logging.Logger;
 
 import static com.company.MSGrid.*;
 
@@ -9,8 +10,8 @@ public class Main {
     public static void main(String[] args) {
         boolean gameRunning = false;
         System.out.println("Hello there my name is Miynes Weeper you must be bored\n" +
-                           "from the looks of it. Would you like to play a game of " +
-                           "Minesweeper? ");
+                "from the looks of it. Would you like to play a game of " +
+                "Minesweeper? ");
         Scanner response = new Scanner(System.in);
         String answer = response.nextLine();
         if(answer.equals("yes")) {

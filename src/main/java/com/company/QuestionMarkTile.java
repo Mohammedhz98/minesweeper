@@ -1,15 +1,15 @@
 package com.company;
 
 public class QuestionMarkTile extends Tile {
-    private final int tileCode = 4;
+    private static final int tileCode = 4;
 
     @Override
     public int getTileCode() {
         return tileCode;
     }
 
+    @Override
     public String toString() {
-        String QuestionMarkBox = "[?]";
-        return QuestionMarkBox;
+        return "[?]";
     }
 }

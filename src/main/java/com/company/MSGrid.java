@@ -1,7 +1,7 @@
 package com.company;
 
 public class MSGrid {
-    public static Tile[][] hiddenBoard;
+    private static Tile[][] hiddenBoard;
     private static Tile[][] uncoveredBoard;
     private static int totalMines;
 
@@ -26,7 +26,6 @@ public class MSGrid {
 
     public static Tile[][] createHiddenGrid(int x, int y) {
         hiddenBoard = new Tile[x][y];
-        //System.out.println(hiddenBoard.length);
         HiddenTile hidden = new HiddenTile();
         for(int i=0; i < hiddenBoard.length; i++) {
             for(int j=0; j < hiddenBoard.length; j++) {
