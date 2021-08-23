@@ -1,8 +1,5 @@
 package com.company;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-
 public class MSGrid {
     public static Tile[][] hiddenBoard;
     private static Tile[][] uncoveredBoard;
@@ -29,6 +26,7 @@ public class MSGrid {
 
     public static Tile[][] createHiddenGrid(int x, int y) {
         hiddenBoard = new Tile[x][y];
+        //System.out.println(hiddenBoard.length);
         HiddenTile hidden = new HiddenTile();
         for(int i=0; i < hiddenBoard.length; i++) {
             for(int j=0; j < hiddenBoard.length; j++) {
@@ -38,31 +36,74 @@ public class MSGrid {
         return hiddenBoard;
     }
 
+    public static int bombsAroundTile(Tile[][] uncoveredGrid, int x,int y) {
+                int totalBombsAroundTile = 0;
+                if (x > 0 &&  y > 0 && uncoveredGrid[x - 1][y - 1].getTileCode() == 2) {
+                    totalBombsAroundTile++;
+                }
+                if (y > 0 && uncoveredGrid[x][y - 1].getTileCode() == 2) {
+                    totalBombsAroundTile++;
+                }
+                if (x < (uncoveredGrid.length - 1) && y > 0 && uncoveredGrid[x + 1][y - 1].getTileCode() == 2) {
+                    totalBombsAroundTile++;
+                }
+                if (x > 0 && uncoveredGrid[x - 1][y].getTileCode() == 2) {
+                    totalBombsAroundTile++;
+                }
+                if (x < (uncoveredGrid.length - 1) && uncoveredGrid[x + 1][y].getTileCode() == 2) {
+                    totalBombsAroundTile++;
+                }
+                if (x > 0 && y < (uncoveredGrid.length - 1) && uncoveredGrid[x - 1][y + 1].getTileCode() == 2) {
+                    totalBombsAroundTile++;
+                }
+                if (y < (uncoveredGrid.length - 1) && uncoveredGrid[x] [y + 1].getTileCode() == 2) {
+                    totalBombsAroundTile++;
+                }
+                if (x < (uncoveredGrid.length - 1) && y < (uncoveredGrid.length - 1) && uncoveredGrid[x + 1][y + 1].getTileCode() == 2) {
+                    totalBombsAroundTile++;
+                }
+        return totalBombsAroundTile;
+    }
+    public static Tile[][] addNumberTiles(Tile[][] uncoveredGrid) {
+        for(int i=0; i < uncoveredGrid.length; i++) {
+            for(int j=0; j < uncoveredGrid.length; j++) {
+                if(uncoveredGrid[i][j].getTileCode() == 1 && bombsAroundTile(uncoveredGrid,i,j) != 0 ) {
+                    uncoveredGrid[i][j] = new NumberTile(bombsAroundTile(uncoveredGrid,i,j));
+                }
+            }
+        }
+        return uncoveredGrid;
+    }
     public static Tile[][] createUncoveredGrid(int x, int y) {
         uncoveredBoard = new Tile[x][y];
-        int lowerBound = 10;
+        int lowerBound = 15;
         int randomRange = 15;
-        totalMines = (int) (lowerBound + Math.round(Math.random()*randomRange));
-        int mineCount = totalMines;
-        System.out.println(totalMines);
+        int placeableMines = (int) (lowerBound + Math.round(Math.random()*randomRange));
+        //System.out.println(placeableMines);
+        int noOfMinesCornering = 0;
         Tile tile = new Tile();
         Tile bomb = new BombTile();
+        Tile mineNum;
         for(int i=0; i < uncoveredBoard.length; i++) {
             int bombLineCount = 0;
             for(int j=0; j < uncoveredBoard.length; j++) {
-                if(Math.random() >= 0.6 && mineCount!=0 && bombLineCount == 3) {
+                if(Math.random() >= 0.8 && placeableMines !=0 && bombLineCount == 4) {
                     uncoveredBoard[i][j] = tile;
+                    //System.out.println(bombLineCount);
                 }
-                else if(Math.random() >= 0.6 && mineCount!=0) {
+                else if(Math.random() >= 0.8 && placeableMines !=0 && bombLineCount < 4) {
                     uncoveredBoard[i][j] = bomb;
-                    mineCount --;
+                    placeableMines--;
                     bombLineCount++;
+                    totalMines++;
+                    //System.out.println(bombLineCount);
                 }
                 else {
                     uncoveredBoard[i][j] = tile;
                 }
             }
         }
+        addNumberTiles(uncoveredBoard);
         return uncoveredBoard;
     }
 
