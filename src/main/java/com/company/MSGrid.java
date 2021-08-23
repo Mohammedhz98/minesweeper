@@ -4,8 +4,6 @@ public class MSGrid {
     public static Tile[][] hiddenBoard;
     private static Tile[][] uncoveredBoard;
     private static int totalMines;
-    private static int x;
-    private static int y;
 
 
     public static Tile[][] getHiddenBoard() {
@@ -81,24 +79,19 @@ public class MSGrid {
         int lowerBound = 15;
         int randomRange = 15;
         int placeableMines = (int) (lowerBound + Math.round(Math.random()*randomRange));
-        //System.out.println(placeableMines);
-        int noOfMinesCornering = 0;
         Tile tile = new Tile();
         Tile bomb = new BombTile();
-        Tile mineNum;
         for(int i=0; i < uncoveredBoard.length; i++) {
             int bombLineCount = 0;
             for(int j=0; j < uncoveredBoard.length; j++) {
                 if(Math.random() >= 0.8 && placeableMines !=0 && bombLineCount == 4) {
                     uncoveredBoard[i][j] = tile;
-                    //System.out.println(bombLineCount);
                 }
                 else if(Math.random() >= 0.8 && placeableMines !=0 && bombLineCount < 4) {
                     uncoveredBoard[i][j] = bomb;
                     placeableMines--;
                     bombLineCount++;
                     totalMines++;
-                    //System.out.println(bombLineCount);
                 }
                 else {
                     uncoveredBoard[i][j] = tile;
@@ -129,13 +122,5 @@ public class MSGrid {
             board.append("\n");
         }
         return board.toString();
-    }
-
-    public static void main(String[] args) {
-        uncoveredBoard = createUncoveredGrid(10,10);
-        // System.out.println(displayHiddenGrid());
-        //int maxMines = 15;
-        //totalMines = (int) (10 + Math.round(Math.random()*maxMines));
-        System.out.println(displayUncoveredGrid());
     }
 }

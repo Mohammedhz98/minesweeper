@@ -27,11 +27,6 @@ public class Main {
         else if(answer.equals("no")) {
             System.out.println("That is sad to hear but oh well you can always run me" +
                                " again if you change your mind.");
-            try {
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
             System.out.println("Goodbye!");
         }
         else {
