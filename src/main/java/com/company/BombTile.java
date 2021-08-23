@@ -1,11 +1,11 @@
 package com.company;
 
 public class BombTile extends Tile {
-    private static final int tileCode = 2;
+    private static final int TILECODE = 2;
 
     @Override
     public int getTileCode() {
-        return tileCode;
+        return TILECODE;
     }
 
     @Override

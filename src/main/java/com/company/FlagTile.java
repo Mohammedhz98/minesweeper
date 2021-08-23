@@ -1,11 +1,11 @@
 package com.company;
 
 public class FlagTile extends Tile {
-    private final int tileCode = 3;
+    private static final int TILECODE = 3;
 
     @Override
     public int getTileCode() {
-        return tileCode;
+        return TILECODE;
     }
 
     @Override

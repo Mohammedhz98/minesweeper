@@ -1,12 +1,12 @@
 package com.company;
 
 public class NumberTile extends Tile {
-    private static final int tileCode = 6;
+    private static final int TILECODE = 6;
     private int mineNumber;
 
     @Override
     public int getTileCode() {
-        return tileCode;
+        return TILECODE;
     }
 
     public NumberTile(int noOfMines) {

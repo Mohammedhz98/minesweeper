@@ -1,8 +1,7 @@
 package com.company;
 
 public class Tile {
-    private static final int tileCode = 1;
-    private static final String name = "Empty";
+    private static final int TILECODE = 1;
 
 
     public String toString() {
@@ -10,6 +9,6 @@ public class Tile {
     }
 
     public int getTileCode() {
-        return tileCode;
+        return TILECODE;
     }
 }
