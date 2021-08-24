@@ -5,7 +5,8 @@ import org.junit.jupiter.api.Test;
 
 class TileTests {
 
-    private static Tile empty,bomb,flag,number,hidden,questionmark;
+    private static Tile empty,bomb,flag,hidden,questionmark;
+    private static NumberTile number;
 
     @BeforeAll
     public static void setUp() {
@@ -53,6 +54,13 @@ class TileTests {
     }
 
     @Test
+    void getHiddenTileNumber() {
+        int expectedTileCode = 5;
+        int actualTileCode = hidden.getTileCode();
+        Assertions.assertEquals(expectedTileCode,actualTileCode,"The tile numbers are not the same.");
+    }
+
+    @Test
     void tileToString() {
         String expectedToString = "[ ]";
         String actualToString = empty.toString();
@@ -92,5 +100,13 @@ class TileTests {
         String expectedToString = "[\u25A0]";
         String actualToString = hidden.toString();
         Assertions.assertEquals(expectedToString,actualToString,"The string outputs are not the same.");
+    }
+
+    @Test
+    void setNumberTileNumber() {
+        int expectedMineSetNumber = 10;
+        number.setMineNumber(10);
+        int actualMineNumber = number.getMineNumber();
+        Assertions.assertEquals(expectedMineSetNumber,actualMineNumber, "The setter did not work or set the right number.");
     }
 }

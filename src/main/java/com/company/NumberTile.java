@@ -18,7 +18,6 @@ public class NumberTile extends Tile {
     }
 
     public void setMineNumber(int mineNumber) {
-
         this.mineNumber = mineNumber;
     }
 
