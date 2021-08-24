@@ -3,7 +3,6 @@ on:
   push:
     branches:
       - main
-      - release/*
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
@@ -35,11 +34,3 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=Mohammedhz98_minesweeper
-      - name: Coverage
-        id: jacoco
-        uses: madrapps/jacoco-report@v1.1
-        with:
-          path: ${{ github.workspace }}/.github/workflows/build.yml
-          token: ${{ secrets.GITHUB_TOKEN }}
-          min-coverage-overall: 80
-          min-coverage-changed-files: 80
