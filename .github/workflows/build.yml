@@ -34,7 +34,7 @@ jobs:
         id: jacoco
         uses: madrapps/jacoco-report@v1.1
         with:
-          path: ${{ github.workspace }}/.github/workflows/build.xml
+          path: ${{ github.workspace }}/minesweeper/tree/main/.github/workflows/build.xml
           token: ${{ secrets.GITHUB_TOKEN }}
           min-coverage-overall: 80
           min-coverage-changed-files: 80
