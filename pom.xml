@@ -40,6 +40,7 @@
         <sonar.dynamicAnalysis>reuseReports</sonar.dynamicAnalysis>
         <soner.language>java</soner.language>
         <sonar.coverage.jacoco.xmlReportPaths>${project.basedir}/../target/jacoco.exec</sonar.coverage.jacoco.xmlReportPaths>
+        <sonar.coverage.exclusions>**/*Main.java</sonar.coverage.exclusions>
         <sonar.projectKey>Mohammedhz98_minesweeper</sonar.projectKey>
     </properties>
     <build>
